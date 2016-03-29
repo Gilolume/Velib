@@ -14,6 +14,7 @@ import javax.swing.border.MatteBorder;
 import java.awt.Color;
 
 import javax.swing.border.CompoundBorder;
+import javax.swing.AbstractButton;
 import javax.swing.ButtonGroup;
 import javax.swing.JTable;
 import javax.swing.UIManager;
@@ -53,7 +54,8 @@ public class FrmStations extends JFrame {
 	private JScrollPane scrollPaneStations;
 	private JTable tableStations;
 	private Date aujourdhui;
-	private MyButtonGroup groupeDeBoutons = new MyButtonGroup();;
+	private MyButtonGroup groupeDeBoutons = new MyButtonGroup();
+	private JPanel panel_3;;
 
 	/**
 	 * Launch the application.
@@ -246,7 +248,7 @@ public class FrmStations extends JFrame {
 		rdbtn_mobile.setBounds(98, 36, 93, 50);
 		panel_2.add(rdbtn_mobile);
 		
-		JPanel panel_3 = new JPanel();
+		panel_3 = new JPanel();
 		panel_3.setBorder(new TitledBorder(null, "Disponibilit\u00E9", TitledBorder.LEADING, TitledBorder.TOP, null, null));
 		panel_3.setBounds(10, 149, 761, 127);
 		contentPane.add(panel_3);
@@ -260,11 +262,11 @@ public class FrmStations extends JFrame {
 		lbl_date_heure.setBounds(10, 50, 305, 14);
 		panel_3.add(lbl_date_heure);
 		
-		lbl_veloDisp = new JLabel("V\u00E9los disponibles : nn");
+		lbl_veloDisp = new JLabel("");
 		lbl_veloDisp.setBounds(10, 75, 305, 14);
 		panel_3.add(lbl_veloDisp);
 		
-		lbl_pointAttache = new JLabel("Nombre total de point d'attache : nn");
+		lbl_pointAttache = new JLabel("");
 		lbl_pointAttache.setBounds(10, 100, 305, 14);
 		panel_3.add(lbl_pointAttache);
 		
@@ -272,7 +274,7 @@ public class FrmStations extends JFrame {
 		lbl_isOuvert.setBounds(369, 50, 210, 14);
 		panel_3.add(lbl_isOuvert);
 		
-		lbl_pointAttacheDisp = new JLabel("Point d'attache disponible : nn");
+		lbl_pointAttacheDisp = new JLabel("");
 		lbl_pointAttacheDisp.setBounds(369, 75, 210, 14);
 		panel_3.add(lbl_pointAttacheDisp);
 		
@@ -333,14 +335,20 @@ public class FrmStations extends JFrame {
 		
 		boolean ouvert = (boolean) tableStations.getValueAt(tableStations.getSelectedRow(), 3);
 		if (ouvert == true){
+			lbl_isOuvert.setForeground(new Color(0, 128, 0));
 			lbl_isOuvert.setText("La station est ouverte.");
 		}
 		else{
+			lbl_isOuvert.setForeground(new Color(255, 0, 0));
 			lbl_isOuvert.setText("La station est fermé.");
 		}
 		
 		HashMap<String, String> maMapDisponibilite = new HashMap();
 		maMapDisponibilite = Passerelle.getDispo(tableStations.getValueAt(tableStations.getSelectedRow(), 0).toString());
+		
+		lbl_veloDisp.setText("Vélos disponibles : " + maMapDisponibilite.get("available"));
+		lbl_pointAttache.setText("Nombre total de point d'attache : " + maMapDisponibilite.get("total"));
+		lbl_pointAttacheDisp.setText("Point d'attache disponible : " + maMapDisponibilite.get("free"));
 		
 	
 	}
@@ -355,6 +363,9 @@ public class FrmStations extends JFrame {
 		groupeDeBoutons.clearSelection();
 		modelTable = new MyTableModel();
 		tableStations.setModel(modelTable);
+		for (Component leComposant : panel_3.getComponents()){
+			((JLabel) leComposant).setText("");
+		}
 	}
 	
 }
