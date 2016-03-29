@@ -3,17 +3,9 @@ public class testComplet {
 
 	public static void main(String[] args) {
 		// Test de Station
-		Station s = new Station("21021", "15 rue petit", true, true);
-		Station s1 = new Station("31023", "11 rue Blanche", true, true);
-		Station s2 = new Station("8567", "45 rue Noire", true, true);
-		
-		System.out.println(s.getArrondissement());
-		System.out.println(s1.getArrondissement());
-		System.out.println(s2.getArrondissement());
-		
 		Passerelle pass = new Passerelle();
 		//pass.getCarte();
-		pass.getDispo("4017");
+		pass.getDispo("901");
 
 		
 		// Test de Carte

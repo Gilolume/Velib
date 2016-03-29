@@ -85,6 +85,8 @@ public class Passerelle {
 		while (nbCle > iCle){
 			String key = nodeListDispo.item(iCle).getNodeName();
 			String elem = nodeListDispo.item(iCle).getTextContent();
+			System.out.println(key);
+			System.out.println(elem);
 			maMap.put(key, elem);
 			iCle ++;
 		}

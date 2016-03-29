@@ -91,11 +91,16 @@ public class MyTableModel extends AbstractTableModel{
 			return Object.class;
 		}
     }
-	/*
-	@Override
+	
 	public void setLesStations(String n) {
 		// vide la liste des stations puis 
 		// la remplit avec toutes les stations de l'arrondissement n
+		lesStations.removeAll(lesStations);
 		
-	}*/
+		for(int i=0;i<laCarte.nbStations();i++){
+			if (laCarte.getLaStation(i).getArrondissement().equals(n)){
+				lesStations.add(laCarte.getLaStation(i));
+			}
+		}
+	}
 }
