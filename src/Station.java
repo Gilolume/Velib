@@ -14,8 +14,11 @@ public class Station {
 			if (numero.length() == 5){
 				this.arrondissement = numero.substring(0, 2);
 			}
-			else{
+			else if (numero.length() == 4){
 				this.arrondissement = numero.substring(0, 1);
+			}
+			else{
+				this.arrondissement = "mobile";
 			}
 			
 		}

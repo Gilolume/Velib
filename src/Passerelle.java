@@ -41,13 +41,12 @@ public class Passerelle {
 		int nb = 0;
 		int i = 0;
 		nb = racine.getElementsByTagName("marker").getLength();
-		System.out.println(nb);
 		Carte carte = new Carte();
 		NodeList nodeList;
 		nodeList = racine.getElementsByTagName("marker");
 		while (nb > i){
 			String unNumero = ((Element) nodeList.item(i)).getAttribute("number");
-			String uneAdresse = ((Element) nodeList.item(i)).getAttribute("address");
+			String uneAdresse = ((Element) nodeList.item(i)).getAttribute("fullAddress");
 			String bonus = ((Element) nodeList.item(i)).getAttribute("bonus");
 			String ouvert = ((Element) nodeList.item(i)).getAttribute("open");
 			Boolean unBonus;
@@ -67,7 +66,6 @@ public class Passerelle {
 				etatOuvert = true;
 			}
 			
-			System.out.println(unNumero + " | " + uneAdresse + " | " + unBonus + " | " + etatOuvert);
 			carte.ajouteStations(unNumero, uneAdresse, unBonus, etatOuvert);
 			i ++;
 		}
@@ -85,8 +83,6 @@ public class Passerelle {
 		while (nbCle > iCle){
 			String key = nodeListDispo.item(iCle).getNodeName();
 			String elem = nodeListDispo.item(iCle).getTextContent();
-			System.out.println(key);
-			System.out.println(elem);
 			maMap.put(key, elem);
 			iCle ++;
 		}

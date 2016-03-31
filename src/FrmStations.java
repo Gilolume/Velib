@@ -1,20 +1,13 @@
-import java.awt.BorderLayout;
 import java.awt.Component;
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
-import javax.swing.border.EtchedBorder;
 import javax.swing.border.TitledBorder;
-import javax.swing.border.SoftBevelBorder;
-import javax.swing.border.BevelBorder;
-import javax.swing.border.MatteBorder;
 
 import java.awt.Color;
 
-import javax.swing.border.CompoundBorder;
-import javax.swing.AbstractButton;
 import javax.swing.ButtonGroup;
 import javax.swing.JTable;
 import javax.swing.UIManager;
@@ -31,7 +24,6 @@ import javax.swing.JLabel;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.HashMap;
-import java.util.Locale;
 
 import javax.swing.JButton;
 import javax.swing.ImageIcon;
@@ -41,6 +33,10 @@ import java.awt.Font;
 
 public class FrmStations extends JFrame {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
 	private JLabel lbl_adresse;
 	private JLabel lbl_date_heure;
@@ -57,23 +53,7 @@ public class FrmStations extends JFrame {
 	private JPanel panel_3;;
 	private ButtonGroup groupeDeBoutons = new ButtonGroup();
 	private ActionListener listnerDuGroupe = new ActionListenerBoutonGroupe();
-
-	/**
-	 * Launch the application.
-	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					FrmStations frame = new FrmStations();
-					frame.setVisible(true);
-					
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
+	
 
 	/**
 	 * Create the frame.
@@ -270,6 +250,9 @@ public class FrmStations extends JFrame {
 		JRadioButton rdbtn_mobile = new JRadioButton("Mobile");
 		rdbtn_mobile.setBounds(98, 36, 93, 50);
 		panel_2.add(rdbtn_mobile);
+		rdbtn_mobile.setActionCommand("mobile");
+		groupeDeBoutons.add(rdbtn_mobile);
+		rdbtn_mobile.addActionListener(listnerDuGroupe);
 		
 		panel_3 = new JPanel();
 		panel_3.setBorder(new TitledBorder(null, "Disponibilit\u00E9", TitledBorder.LEADING, TitledBorder.TOP, null, null));
@@ -301,7 +284,7 @@ public class FrmStations extends JFrame {
 		lbl_pointAttacheDisp.setBounds(369, 75, 210, 14);
 		panel_3.add(lbl_pointAttacheDisp);
 		
-		lbl_carte_bancaire = new JLabel("Location par carte bancaire : aaa");
+		lbl_carte_bancaire = new JLabel("");
 		lbl_carte_bancaire.setBounds(369, 100, 210, 14);
 		panel_3.add(lbl_carte_bancaire);
 		
@@ -323,6 +306,7 @@ public class FrmStations extends JFrame {
 		tableStations.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
+				//Verification si l'utilisateur na clic pas sur un case vide
 				if (tableStations.getSelectedRow() != -1){
 					afficherDisponibilite();
 				}
@@ -344,6 +328,7 @@ public class FrmStations extends JFrame {
 		contentPane.add(btn_rafraichir);
 	}
 	
+	//Affichage des information dans les différent Label du Panel disponibilité
 	public void afficherDisponibilite(){
 		lbl_adresse.setText(tableStations.getValueAt(tableStations.getSelectedRow(), 1).toString());
 		
@@ -360,7 +345,17 @@ public class FrmStations extends JFrame {
 			lbl_isOuvert.setText("La station est fermé.");
 		}
 		
-		HashMap<String, String> maMapDisponibilite = new HashMap();
+		boolean bonusCB = (boolean) tableStations.getValueAt(tableStations.getSelectedRow(), 2);
+		if (bonusCB == true){
+			lbl_carte_bancaire.setForeground(new Color(0, 128, 0));
+			lbl_carte_bancaire.setText("Location par carte bancaire : oui");
+		}
+		else{
+			lbl_carte_bancaire.setForeground(new Color(255, 0, 0));
+			lbl_carte_bancaire.setText("Location par carte bancaire : non");
+		}
+		
+		HashMap<String, String> maMapDisponibilite = new HashMap<String, String>();
 		maMapDisponibilite = Passerelle.getDispo(tableStations.getValueAt(tableStations.getSelectedRow(), 0).toString());
 		
 		lbl_veloDisp.setText("Vélos disponibles : " + maMapDisponibilite.get("available"));
@@ -370,13 +365,16 @@ public class FrmStations extends JFrame {
 	
 	}
 	
+	//Afficher les stations dans la JTable en rapport avec le numéro de l'arrondissement choisi
 	public void afficherStaionsSelect(String numArr){
 		((MyTableModel) tableStations.getModel()).setLesStations(numArr);
 		tableStations.revalidate();
 		tableStations.clearSelection();
 		tableStations.repaint();
+		viderDisponibilite();
 	}
 	
+	//Rafraichir la JTable
 	public void rafraichirTable(){
 		groupeDeBoutons.clearSelection();
 		tableStations.clearSelection();
@@ -385,15 +383,18 @@ public class FrmStations extends JFrame {
 		viderDisponibilite();
 	}
 	
+	//Fonction pour vider le panel des disponibilité
+	//On parcour tout les composants du panel avec une boucle et on set leur text à ""
 	public void viderDisponibilite(){
 		for (Component leComposant : panel_3.getComponents()){
 			((JLabel) leComposant).setText("");
 		}
 	}
 	
+	//Creation de la class ActionListenerBoutonGroupe qui va gérer les click sur les boutons
 	class ActionListenerBoutonGroupe implements ActionListener {
 	      public void actionPerformed(ActionEvent e) {
 	    	  afficherStaionsSelect(e.getActionCommand());
 	      }
-	    }
+	}
 }
