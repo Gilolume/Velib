@@ -74,6 +74,7 @@ public class FrmStations extends JFrame {
 		panel.setLayout(null);
 		
 		JRadioButton rdbtn_1 = new JRadioButton("1");
+		rdbtn_1.setFont(new Font("Tahoma", Font.PLAIN, 10));
 		rdbtn_1.setBounds(6, 17, 45, 23);
 		panel.add(rdbtn_1);
 		rdbtn_1.setActionCommand("1");
@@ -81,6 +82,7 @@ public class FrmStations extends JFrame {
 		rdbtn_1.addActionListener(listnerDuGroupe);
 		
 		JRadioButton rdbtn_2 = new JRadioButton("2");
+		rdbtn_2.setFont(new Font("Tahoma", Font.PLAIN, 10));
 		rdbtn_2.setBounds(53, 17, 45, 23);
 		panel.add(rdbtn_2);
 		rdbtn_2.setActionCommand("2");
@@ -88,6 +90,7 @@ public class FrmStations extends JFrame {
 		rdbtn_2.addActionListener(listnerDuGroupe);
 		
 		JRadioButton rdbtn_3 = new JRadioButton("3");
+		rdbtn_3.setFont(new Font("Tahoma", Font.PLAIN, 10));
 		rdbtn_3.setBounds(100, 17, 45, 23);
 		panel.add(rdbtn_3);
 		rdbtn_3.setActionCommand("3");
@@ -95,6 +98,7 @@ public class FrmStations extends JFrame {
 		rdbtn_3.addActionListener(listnerDuGroupe);
 		
 		JRadioButton rdbtn_4 = new JRadioButton("4");
+		rdbtn_4.setFont(new Font("Tahoma", Font.PLAIN, 10));
 		rdbtn_4.setBounds(147, 17, 45, 23);
 		panel.add(rdbtn_4);
 		rdbtn_4.setActionCommand("4");
@@ -102,6 +106,7 @@ public class FrmStations extends JFrame {
 		rdbtn_4.addActionListener(listnerDuGroupe);
 		
 		JRadioButton rdbtn_5 = new JRadioButton("5");
+		rdbtn_5.setFont(new Font("Tahoma", Font.PLAIN, 10));
 		rdbtn_5.setBounds(194, 17, 45, 23);
 		panel.add(rdbtn_5);
 		rdbtn_5.setActionCommand("5");
@@ -109,6 +114,7 @@ public class FrmStations extends JFrame {
 		rdbtn_5.addActionListener(listnerDuGroupe);
 		
 		JRadioButton rdbtn_6 = new JRadioButton("6");
+		rdbtn_6.setFont(new Font("Tahoma", Font.PLAIN, 10));
 		rdbtn_6.setBounds(6, 43, 45, 23);
 		panel.add(rdbtn_6);
 		rdbtn_6.setActionCommand("6");
@@ -116,6 +122,7 @@ public class FrmStations extends JFrame {
 		rdbtn_6.addActionListener(listnerDuGroupe);
 		
 		JRadioButton rdbtn_7 = new JRadioButton("7");
+		rdbtn_7.setFont(new Font("Tahoma", Font.PLAIN, 10));
 		rdbtn_7.setBounds(53, 43, 45, 23);
 		panel.add(rdbtn_7);
 		rdbtn_7.setActionCommand("7");
@@ -123,6 +130,7 @@ public class FrmStations extends JFrame {
 		rdbtn_7.addActionListener(listnerDuGroupe);
 		
 		JRadioButton rdbtn_8 = new JRadioButton("8");
+		rdbtn_8.setFont(new Font("Tahoma", Font.PLAIN, 10));
 		rdbtn_8.setBounds(100, 43, 45, 23);
 		panel.add(rdbtn_8);
 		rdbtn_8.setActionCommand("8");
@@ -130,6 +138,7 @@ public class FrmStations extends JFrame {
 		rdbtn_8.addActionListener(listnerDuGroupe);
 		
 		JRadioButton rdbtn_9 = new JRadioButton("9");
+		rdbtn_9.setFont(new Font("Tahoma", Font.PLAIN, 10));
 		rdbtn_9.setBounds(147, 43, 45, 23);
 		panel.add(rdbtn_9);
 		rdbtn_9.setActionCommand("9");
@@ -137,6 +146,7 @@ public class FrmStations extends JFrame {
 		rdbtn_9.addActionListener(listnerDuGroupe);
 		
 		JRadioButton rdbtn_10 = new JRadioButton("10");
+		rdbtn_10.setFont(new Font("Tahoma", Font.PLAIN, 10));
 		rdbtn_10.setBounds(194, 43, 45, 23);
 		panel.add(rdbtn_10);
 		rdbtn_10.setActionCommand("10");
@@ -144,6 +154,7 @@ public class FrmStations extends JFrame {
 		rdbtn_10.addActionListener(listnerDuGroupe);
 		
 		JRadioButton rdbtn_11 = new JRadioButton("11");
+		rdbtn_11.setFont(new Font("Tahoma", Font.PLAIN, 10));
 		rdbtn_11.setBounds(6, 69, 45, 23);
 		panel.add(rdbtn_11);
 		rdbtn_11.setActionCommand("11");
@@ -151,6 +162,7 @@ public class FrmStations extends JFrame {
 		rdbtn_11.addActionListener(listnerDuGroupe);
 		
 		JRadioButton rdbtn_12 = new JRadioButton("12");
+		rdbtn_12.setFont(new Font("Tahoma", Font.PLAIN, 10));
 		rdbtn_12.setBounds(53, 69, 45, 23);
 		panel.add(rdbtn_12);
 		rdbtn_12.setActionCommand("12");
@@ -158,6 +170,7 @@ public class FrmStations extends JFrame {
 		rdbtn_12.addActionListener(listnerDuGroupe);
 		
 		JRadioButton rdbtn_13 = new JRadioButton("13");
+		rdbtn_13.setFont(new Font("Tahoma", Font.PLAIN, 10));
 		rdbtn_13.setBounds(100, 69, 45, 23);
 		panel.add(rdbtn_13);
 		rdbtn_13.setActionCommand("13");
@@ -165,6 +178,7 @@ public class FrmStations extends JFrame {
 		rdbtn_13.addActionListener(listnerDuGroupe);
 		
 		JRadioButton rdbtn_14 = new JRadioButton("14");
+		rdbtn_14.setFont(new Font("Tahoma", Font.PLAIN, 10));
 		rdbtn_14.setBounds(147, 69, 45, 23);
 		panel.add(rdbtn_14);
 		rdbtn_14.setActionCommand("14");
@@ -172,6 +186,7 @@ public class FrmStations extends JFrame {
 		rdbtn_14.addActionListener(listnerDuGroupe);
 		
 		JRadioButton rdbtn_15 = new JRadioButton("15");
+		rdbtn_15.setFont(new Font("Tahoma", Font.PLAIN, 10));
 		rdbtn_15.setBounds(194, 69, 45, 23);
 		panel.add(rdbtn_15);
 		rdbtn_15.setActionCommand("15");
@@ -179,6 +194,7 @@ public class FrmStations extends JFrame {
 		rdbtn_15.addActionListener(listnerDuGroupe);
 		
 		JRadioButton rdbtn_16 = new JRadioButton("16");
+		rdbtn_16.setFont(new Font("Tahoma", Font.PLAIN, 10));
 		rdbtn_16.setBounds(6, 95, 45, 23);
 		panel.add(rdbtn_16);
 		rdbtn_16.setActionCommand("16");
@@ -186,6 +202,7 @@ public class FrmStations extends JFrame {
 		rdbtn_16.addActionListener(listnerDuGroupe);
 		
 		JRadioButton rdbtn_17 = new JRadioButton("17");
+		rdbtn_17.setFont(new Font("Tahoma", Font.PLAIN, 10));
 		rdbtn_17.setBounds(53, 95, 45, 23);
 		panel.add(rdbtn_17);
 		rdbtn_17.setActionCommand("17");
@@ -193,6 +210,7 @@ public class FrmStations extends JFrame {
 		rdbtn_17.addActionListener(listnerDuGroupe);
 		
 		JRadioButton rdbtn_18 = new JRadioButton("18");
+		rdbtn_18.setFont(new Font("Tahoma", Font.PLAIN, 10));
 		rdbtn_18.setBounds(100, 95, 45, 23);
 		panel.add(rdbtn_18);
 		rdbtn_18.setActionCommand("18");
@@ -200,6 +218,7 @@ public class FrmStations extends JFrame {
 		rdbtn_18.addActionListener(listnerDuGroupe);
 		
 		JRadioButton rdbtn_19 = new JRadioButton("19");
+		rdbtn_19.setFont(new Font("Tahoma", Font.PLAIN, 10));
 		rdbtn_19.setBounds(147, 95, 45, 23);
 		panel.add(rdbtn_19);
 		rdbtn_19.setActionCommand("19");
@@ -207,6 +226,7 @@ public class FrmStations extends JFrame {
 		rdbtn_19.addActionListener(listnerDuGroupe);
 		
 		JRadioButton rdbtn_20 = new JRadioButton("20");
+		rdbtn_20.setFont(new Font("Tahoma", Font.PLAIN, 10));
 		rdbtn_20.setBounds(194, 95, 45, 23);
 		panel.add(rdbtn_20);
 		rdbtn_20.setActionCommand("20");
@@ -220,6 +240,7 @@ public class FrmStations extends JFrame {
 		panel_1.setLayout(null);
 		
 		JRadioButton rdbtn_92 = new JRadioButton("92");
+		rdbtn_92.setFont(new Font("Tahoma", Font.PLAIN, 10));
 		rdbtn_92.setBounds(95, 29, 56, 23);
 		panel_1.add(rdbtn_92);
 		rdbtn_92.setActionCommand("92");
@@ -228,6 +249,7 @@ public class FrmStations extends JFrame {
 		
 		
 		JRadioButton rdbtn_93 = new JRadioButton("93");
+		rdbtn_93.setFont(new Font("Tahoma", Font.PLAIN, 10));
 		rdbtn_93.setBounds(95, 55, 56, 23);
 		panel_1.add(rdbtn_93);
 		rdbtn_93.setActionCommand("93");
@@ -235,6 +257,7 @@ public class FrmStations extends JFrame {
 		rdbtn_93.addActionListener(listnerDuGroupe);
 		
 		JRadioButton rdbtn_94 = new JRadioButton("94");
+		rdbtn_94.setFont(new Font("Tahoma", Font.PLAIN, 10));
 		rdbtn_94.setBounds(95, 81, 109, 23);
 		panel_1.add(rdbtn_94);
 		rdbtn_94.setActionCommand("94");
@@ -248,6 +271,7 @@ public class FrmStations extends JFrame {
 		panel_2.setLayout(null);
 		
 		JRadioButton rdbtn_mobile = new JRadioButton("Mobile");
+		rdbtn_mobile.setFont(new Font("Tahoma", Font.PLAIN, 10));
 		rdbtn_mobile.setBounds(98, 36, 93, 50);
 		panel_2.add(rdbtn_mobile);
 		rdbtn_mobile.setActionCommand("mobile");
