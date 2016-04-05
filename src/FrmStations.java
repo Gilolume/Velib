@@ -366,7 +366,7 @@ public class FrmStations extends JFrame {
 		}
 		else{
 			lbl_isOuvert.setForeground(new Color(255, 0, 0));
-			lbl_isOuvert.setText("La station est fermé.");
+			lbl_isOuvert.setText("La station est fermée.");
 		}
 		
 		boolean bonusCB = (boolean) tableStations.getValueAt(tableStations.getSelectedRow(), 2);
@@ -383,8 +383,8 @@ public class FrmStations extends JFrame {
 		maMapDisponibilite = Passerelle.getDispo(tableStations.getValueAt(tableStations.getSelectedRow(), 0).toString());
 		
 		lbl_veloDisp.setText("Vélos disponibles : " + maMapDisponibilite.get("available"));
-		lbl_pointAttache.setText("Nombre total de point d'attache : " + maMapDisponibilite.get("total"));
-		lbl_pointAttacheDisp.setText("Point d'attache disponible : " + maMapDisponibilite.get("free"));
+		lbl_pointAttache.setText("Nombre total de points d'attaches : " + maMapDisponibilite.get("total"));
+		lbl_pointAttacheDisp.setText("Points d'attaches disponibles : " + maMapDisponibilite.get("free"));
 		
 	
 	}
