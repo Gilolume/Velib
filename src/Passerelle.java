@@ -10,6 +10,8 @@ import java.io.IOException;
 
 public class Passerelle {
 
+	//private static String urlCarto = "carto.xml";
+	//private static String urlDispo = "";
 	private static String urlCarto = "http://www.velib.paris.fr/service/carto";
 	private static String urlDispo = "http://www.velib.paris.fr/service/stationdetails/";
 	private static Document document;
@@ -74,6 +76,7 @@ public class Passerelle {
 	
 	public static HashMap<String , String> getDispo(String unNumero){
 		HashMap<String, String> maMap = new HashMap();
+		//initialisation(urlDispo + unNumero + ".xml"); //Supprimer le .xml si plus bloqué par le proxy
 		initialisation(urlDispo + unNumero);
 		Element racineDispo = document.getDocumentElement();
 		NodeList nodeListDispo;
